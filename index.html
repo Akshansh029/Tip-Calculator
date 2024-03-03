@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/index.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Tip Calculator</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="letter-container">
+      <p>S</p>
+      <p>P</p>
+      <p>L</p>
+      <p>I</p>
+      <p>T</p>
+      <p>T</p>
+      <p>E</p>
+      <p>R</p>
+    </div>
+    <div class="container">
+      <div class="input-container">
+        <div class="input-inSection" id="bill-sec">
+          <div class="label-cont">
+            <label for="bill">Bill</label>
+            <div id="bill-error-msg">Can't be zero</div>
+          </div>
+          <div class="input-wrapper">
+            <span
+              ><img src="./images/icon-dollar.svg" alt="" width="9px" /></span
+            ><input
+              type="number"
+              inputmode="numeric"
+              id="bill-input"
+              placeholder="0"
+            />
+          </div>
+        </div>
+        <div class="input-inSection" id="tip-sec">
+          <label for="">Select tip %</label>
+          <div class="btn-container">
+            <button class="tip-btn">5%</button>
+            <button class="tip-btn">10%</button>
+            <button class="tip-btn">15%</button>
+            <button class="tip-btn">20%</button>
+            <button class="tip-btn">25%</button>
+            <input type="number" id="custom-input" placeholder="Custom" />
+          </div>
+        </div>
+        <div class="input-inSection" id="people-sec">
+          <div class="label-cont">
+            <label for="people">Number of people</label>
+            <div id="people-error-msg">Can't be zero</div>
+          </div>
+          <div class="input-wrapper">
+            <span
+              ><img src="./images/icon-person.svg" alt="" width="9px"
+            /></span>
+            <input
+              type="number"
+              inputmode="numeric"
+              id="people-input"
+              placeholder="0"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="result-container">
+        <div class="upper-container">
+          <div class="tip-amount-sec">
+            <div class="tip-labels">
+              <h3>Tip amount</h3>
+              <h4>/ person</h4>
+            </div>
+            <h1 id="tip-amount">$0.00</h1>
+          </div>
+          <div class="tip-amount-sec">
+            <div class="tip-labels">
+              <h3>Total</h3>
+              <h4>/ person</h4>
+            </div>
+            <h1 id="total-per-person">$0.00</h1>
+          </div>
+        </div>
+        <button
+          type="button"
+          onclick="reset()"
+          class="reset-btn-inactive"
+          id="reset-btn"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+    <!-- 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
