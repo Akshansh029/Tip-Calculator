@@ -42,7 +42,7 @@ body {
 .container {
   max-width: 650px;
   min-width: 300px;
-  min-height: 300px;
+  min-height: fit-content;
   background-color: white;
   padding: 2rem;
   display: flex;
@@ -201,6 +201,7 @@ span {
 .result-container button:hover {
   background-color: var(--backgroundColor);
 }
+
 .reset-btn-inactive {
   background-color: hsl(182, 100%, 20%);
   color: var(--darkCyan);
@@ -235,6 +236,9 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #reset-btn {
+    margin-top: 1.5rem;
   }
 }
 @media only screen and (max-width: 425px) {
