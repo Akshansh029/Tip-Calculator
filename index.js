@@ -22,6 +22,7 @@ const calculateTip = (event) => {
   let peopleValue = parseInt(peopleInput.value);
   let tipPercentage = parseFloat(event.target.getAttribute("data-tip"));
   let amount;
+  let amountPerPerson;
 
   document.getElementById("bill-error-msg").style.display = "none";
   document.getElementById("people-error-msg").style.display = "none";
@@ -31,7 +32,8 @@ const calculateTip = (event) => {
     tipAmount.innerHTML = `$0.00`;
   } else {
     amount = (billValue * tipPercentage) / 100;
-    tipAmount.innerHTML = `$${amount.toFixed(2)}`;
+    amountPerPerson = amount / peopleValue;
+    tipAmount.innerHTML = `$${amountPerPerson.toFixed(2)}`;
   }
   if (peopleInput.value == 0) {
     document.getElementById("people-error-msg").style.display = "block";
