@@ -55,12 +55,17 @@
         <div class="input-inSection" id="tip-sec">
           <label for="">Select tip %</label>
           <div class="btn-container">
-            <button class="tip-btn">5%</button>
-            <button class="tip-btn">10%</button>
-            <button class="tip-btn">15%</button>
-            <button class="tip-btn">20%</button>
-            <button class="tip-btn">25%</button>
-            <input type="number" id="custom-input" placeholder="Custom" />
+            <button class="tip-btn" data-tip="5">5%</button>
+            <button class="tip-btn" data-tip="10">10%</button>
+            <button class="tip-btn" data-tip="15">15%</button>
+            <button class="tip-btn" data-tip="20">20%</button>
+            <button class="tip-btn" data-tip="25">25%</button>
+            <input
+              type="number"
+              id="custom-input"
+              placeholder="Custom"
+              data-tip="0"
+            />
           </div>
         </div>
         <div class="input-inSection" id="people-sec">

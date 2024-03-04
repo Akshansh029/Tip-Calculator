@@ -17,10 +17,10 @@ const reset = () => {
   document.getElementById("people-error-msg").style.display = "none";
 };
 
-customPercent.addEventListener("input", (event) => {
+const calculateTip = (event) => {
   let billValue = parseInt(billInput.value);
   let peopleValue = parseInt(peopleInput.value);
-  let tipPercentage = parseFloat(event.target.value);
+  let tipPercentage = parseFloat(event.target.getAttribute("data-tip"));
   let amount;
 
   document.getElementById("bill-error-msg").style.display = "none";
@@ -44,36 +44,13 @@ customPercent.addEventListener("input", (event) => {
 
   resetBtn.classList.remove("reset-btn-inactive");
   resetBtn.classList.add("reset-btn-active");
+};
+
+customPercent.addEventListener("input", (event) => {
+  customPercent.setAttribute("data-tip", event.target.value);
+  calculateTip(event);
 });
 
 tipButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    let billValue = parseInt(billInput.value);
-    let peopleValue = parseInt(peopleInput.value);
-    let tipPercentage = parseFloat(event.target.textContent.slice(0, 2));
-    let amount;
-
-    document.getElementById("bill-error-msg").style.display = "none";
-    document.getElementById("people-error-msg").style.display = "none";
-
-    if (billInput.value == 0) {
-      document.getElementById("bill-error-msg").style.display = "block";
-      tipAmount.innerHTML = `$0.00`;
-    } else {
-      amount = (billValue * tipPercentage) / 100;
-      tipAmount.innerHTML = `$${amount.toFixed(2)}`;
-    }
-    if (peopleInput.value == 0) {
-      document.getElementById("people-error-msg").style.display = "block";
-      totalPerPerson.innerHTML = `$0.00`;
-    } else {
-      totalPerPerson.innerHTML = `$${(
-        (billValue + amount) /
-        peopleValue
-      ).toFixed(2)}`;
-    }
-
-    resetBtn.classList.remove("reset-btn-inactive");
-    resetBtn.classList.add("reset-btn-active");
-  });
+  button.addEventListener("click", calculateTip);
 });

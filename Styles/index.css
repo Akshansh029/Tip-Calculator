@@ -40,7 +40,8 @@ body {
   color: hsl(182, 100%, 20%);
 }
 .container {
-  min-width: 600px;
+  max-width: 650px;
+  min-width: 300px;
   min-height: 300px;
   background-color: white;
   padding: 2rem;
@@ -207,4 +208,37 @@ span {
 
 .reset-btn-active {
   background-color: var(--strongCyan);
+}
+
+/* Media-queries */
+@media only screen and (max-width: 650px) {
+  body {
+    overflow-y: scroll;
+    gap: 1rem;
+  }
+  .container {
+    min-width: 350px;
+    min-height: fit-content;
+    flex-direction: column;
+  }
+  .input-container,
+  .result-container {
+    width: 100%;
+  }
+  .btn-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #custom-input {
+    min-width: 100%;
+  }
+  #custom-input::placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .container {
+    min-width: 100%;
+  }
 }
