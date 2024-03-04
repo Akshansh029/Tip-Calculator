@@ -27,9 +27,11 @@ const calculateTip = (event) => {
   document.getElementById("bill-error-msg").style.display = "none";
   document.getElementById("people-error-msg").style.display = "none";
 
-  if (billInput.value == 0) {
+  if (billInput.value == 0 || billInput.value == "") {
     document.getElementById("bill-error-msg").style.display = "block";
-    tipAmount.innerHTML = `$0.00`;
+    tipAmount.innerHTML = "$0.00";
+    totalPerPerson.innerHTML = "$0.00";
+    console.log(totalPerPerson.innerHTML);
   } else {
     amount = (billValue * tipPercentage) / 100;
     amountPerPerson = amount / peopleValue;
@@ -37,7 +39,8 @@ const calculateTip = (event) => {
   }
   if (peopleInput.value == 0) {
     document.getElementById("people-error-msg").style.display = "block";
-    totalPerPerson.innerHTML = `$0.00`;
+    tipAmount.innerHTML = "$0.00";
+    totalPerPerson.innerHTML = "$0.00";
   } else {
     totalPerPerson.innerHTML = `$${((billValue + amount) / peopleValue).toFixed(
       2
